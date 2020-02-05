@@ -11,7 +11,9 @@
     "author": "Markus Heine",
     "license": "ISC",
     "dependencies": {
+        "@types/compression": "^1.0.1",
         "@types/morgan": "^1.7.37",
+        "compression": "^1.7.4",
         "express": "^4.17.1",
         "morgan": "^1.9.1"
     },

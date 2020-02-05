@@ -1,6 +1,7 @@
 import express from "express";
 import * as bodyParser from "body-parser";
 import logger from "morgan";
+import compression from "compression";
 
 const app = express();
 
@@ -12,6 +13,7 @@ const userAPIRouter = require("./routes/userAPI");
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(logger("dev"));
+app.use(compression());
 
 app.use("/index", indexRouter);
 app.use("/userAPI", userAPIRouter);
