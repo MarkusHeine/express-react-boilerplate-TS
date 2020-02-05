@@ -1,10 +1,9 @@
-import React from "react";
-import "./App.css";
+import React, { MouseEvent } from "react";
 
-const App = () => {
+const App: React.FC = () => {
     return (
         <div className="App">
-            <p>App is running</p>
+            <p>app is running</p>
         </div>
     );
 };
