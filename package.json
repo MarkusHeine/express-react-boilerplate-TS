@@ -1,5 +1,5 @@
 {
-    "name": "expressts_reactts_boilderplate",
+    "name": "expressts_react-ts_boilderplate",
     "version": "1.0.0",
     "description": "Boilerplate code for a ExpressTS backend with a ReactTS Frontend",
     "main": "index.js",
@@ -11,7 +11,12 @@
     "author": "Markus Heine",
     "license": "ISC",
     "dependencies": {
+        "@types/morgan": "^1.7.37",
+        "express": "^4.17.1",
+        "morgan": "^1.9.1"
+    },
+    "devDependencies": {
         "@types/express": "^4.17.2",
-        "express": "^4.17.1"
+        "concurrently": "^5.1.0"
     }
 }
