@@ -1,8 +1,9 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import * as bodyParser from "body-parser";
 import compression from "compression";
 import cookieSession from "cookie-session";
 import cors from "cors";
+import * as dotenv from "dotenv";
 
 const app = express();
 
@@ -17,6 +18,7 @@ const corsOptions = {
 const indexRouter = require("./routes/index");
 const userAPIRouter = require("./routes/userAPI");
 
+dotenv.config();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(compression());
@@ -28,10 +30,7 @@ app.use(
 app.use(cors(corsOptions));
 
 const cookieSessionMiddleware = cookieSession({
-    secret:
-        process.env.NODE_ENV == "production"
-            ? process.env.SESS_SECRET
-            : "secrets.cookieSessionSecret",
+    secret: process.env.COOKIESESSION_SECRET,
     maxAge: 1000 * 60 * 60 * 24 * 14
 });
 app.use(cookieSessionMiddleware);
